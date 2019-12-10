@@ -25,18 +25,21 @@ export default function MainPage() {
       <Grid
         container
         spacing={0}
-        direction="column"
+        direction="row"
         alignItems="center"
         justify="center"
         style={{
-          minHeight: "100vh"
+          minHeight: "100vh",
+          maxWidth: "99vw"
         }}
       >
-        <Post />
-        <Grid item xs={3}>
+        <Grid item md={3} xs={3}>
           <Paper className={classes.paper}>
             <Submit />
           </Paper>
+        </Grid>
+        <Grid item md={9} xs={12}>
+          <Post />
         </Grid>
       </Grid>
     </div>

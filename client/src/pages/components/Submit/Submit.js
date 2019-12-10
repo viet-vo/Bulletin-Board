@@ -7,7 +7,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
-      width: 200,
+      // width: 200,
     },
   },
 }));
@@ -23,7 +23,6 @@ export default function Submit() {
           label="Details"
           multiline
           rows="4"
-          defaultValue="..."
           className={classes.textField}
           margin="normal"
           variant="outlined"
