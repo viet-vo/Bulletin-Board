@@ -1,43 +1,41 @@
-import React, { /*useState, useEffect*/ } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import React, { /*useState useEffect*/ } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
-// import usePost from '../../../hooks/usePost';
-// 
+import { useInputChange } from '../../../hooks/useInputChange';
+
 const useStyles = makeStyles(theme => ({
   root: {
-    '& > *': {
-      margin: theme.spacing(1),
+    "& > *": {
+      margin: theme.spacing(1)
       // width: 200,
-    },
-  },
+    }
+  }
 }));
 
 export default function Submit() {
   const classes = useStyles();
-  // const [post, setPost] = useState(0);
-
-  // useEffect(() => {
-  //   useF
-  //   return () => {
-  //     cleanup
-  //   };
-  // }, [input])
+  const [input, handleInputChange] = useInputChange();
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(input);
+  };
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="standard-basic" label="Topic" />
+      <TextField id="topic" label="Topic" onChange={handleInputChange} />
       <TextField
-          id="outlined-multiline-static"
-          label="Details"
-          multiline
-          rows="4"
-          className={classes.textField}
-          margin="normal"
-          variant="outlined"
-        />
-      <Button variant="contained" color="primary">
+        id="detail"
+        label="Details"
+        multiline
+        rows="4"
+        className={classes.textField}
+        margin="normal"
+        variant="outlined"
+        onChange={handleInputChange}
+      />
+      <Button variant="contained" color="primary" onClick={handleSubmit}>
         Submit
       </Button>
     </form>
