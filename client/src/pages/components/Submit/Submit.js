@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { /*useState, useEffect*/ } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+// import usePost from '../../../hooks/usePost';
+// 
 const useStyles = makeStyles(theme => ({
   root: {
     '& > *': {
@@ -14,6 +16,14 @@ const useStyles = makeStyles(theme => ({
 
 export default function Submit() {
   const classes = useStyles();
+  // const [post, setPost] = useState(0);
+
+  // useEffect(() => {
+  //   useF
+  //   return () => {
+  //     cleanup
+  //   };
+  // }, [input])
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
