@@ -1,9 +1,10 @@
-import React, { /*useState useEffect*/ } from "react";
+import React /*useState useEffect*/ from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-import { useInputChange } from '../../../hooks/useInputChange';
+import { useInputChange } from "../../../hooks/useInputChange";
+import api from "../../../util/postAPI";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,9 +18,10 @@ const useStyles = makeStyles(theme => ({
 export default function Submit() {
   const classes = useStyles();
   const [input, handleInputChange] = useInputChange();
+
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(input);
+    api.post(input);
   };
 
   return (
