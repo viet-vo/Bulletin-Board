@@ -3,7 +3,7 @@ const path = require('path');
 const router = require('express').Router();
 
 // Subroutes
-//! TODO: Post routes
+const postRoutes = require('./postRoutes');
 
 router.use('/post', postRoutes);
 

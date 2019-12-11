@@ -21,7 +21,9 @@ export default function Submit() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    api.post(input);
+    api.post(input)
+    .then(data => data.status === 200 ? console.log("Successful post!") : console.log("Placeholder Expression!"))
+    .catch(err => console.log(err));
   };
 
   return (

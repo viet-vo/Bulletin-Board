@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-// const routes = require('./routes');
+const routes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -33,10 +33,10 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 };
 
-// app.use(routes);
-app.get('/', (req, res) => {
-    res.send('Hello World')
-});
+app.use(routes);
+// app.get('/', (req, res) => {
+//     res.send('Hello World')
+// });
 
 app.listen(PORT, () => {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
