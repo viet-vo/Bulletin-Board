@@ -1,10 +1,10 @@
-import React /*useState useEffect*/ from "react";
+import React, { /*useState*/ } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 import { useInputChange } from "../../../hooks/useInputChange";
-import api from "../../../util/postAPI";
+import api from "../../../util/API";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,9 +21,13 @@ export default function Submit() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    api.post(input)
-    .then(data => data.status === 200 ? console.log("Successful post!") : console.log("Placeholder Expression!"))
+    api.submit(input)
+    .then(
+      
+      // data => data.status === 200 ? console.log(data) : console.log("Placeholder Expression!")
+      )
     .catch(err => console.log(err));
+    
   };
 
   return (

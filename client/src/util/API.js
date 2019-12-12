@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default {
-    post: data => {
+    submit: data => {
         return axios.post('/post', data);
     }
 };
