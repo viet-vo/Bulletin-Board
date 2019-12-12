@@ -9,7 +9,6 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const uri = process.env.MONGODB_URI;
-// const mongoDB = require('./config/db');
 
 // Middleware
 mongoose.connect(uri, {
@@ -34,9 +33,6 @@ if (process.env.NODE_ENV === 'production') {
 };
 
 app.use(routes);
-// app.get('/', (req, res) => {
-//     res.send('Hello World')
-// });
 
 app.listen(PORT, () => {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)

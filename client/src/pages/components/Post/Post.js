@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/grid';
+import Button from '@material-ui/core/Button';
+
+import api from '../../../util/API';
 
 const useStyles = makeStyles(theme => ({
     paper: {
@@ -12,6 +15,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Post() {
+    const test = () => {
+        console.log(api.get);
+    };
     const classes = useStyles();
     const [data] = useState([{
         topic: "Jeff Bezos says employee activists are wrong and Silicon Valley firms should feel comfortable doing business with the US military",
@@ -72,6 +78,7 @@ export default function Post() {
                      )
                  })}
              </Grid>
+             <Button lable="test" onClick={test}>test</Button>
         </div>
     )
 }
