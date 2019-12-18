@@ -16,7 +16,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function Post() {
     const test = () => {
-        console.log(api.get);
+        api.read()
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
     };
     const classes = useStyles();
     const [data] = useState([{
