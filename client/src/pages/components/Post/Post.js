@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Paper, Grid, Button } from "@material-ui/core";
-
-import api from "../../../util/API";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -11,16 +9,8 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary
   }
 }));
-
-export default function Post() {
-  const [data, setData] = useState();
-  useEffect(() => {
-    api
-      .read()
-      .then(res => setData(res.data))
-      .catch(err => console.log(err));
-  }, []);
-
+const Post = (props) => {
+  console.log(props)
   const classes = useStyles();
 
   return (
@@ -33,7 +23,7 @@ export default function Post() {
         justify="center"
         wrap="nowrap"
       >
-        {data ? (
+        {/* {data ? (
           data.map(i => {
             return (
               <Grid
@@ -56,9 +46,11 @@ export default function Post() {
               <Typography>Loading...?</Typography>
             </Paper>
           </Grid>
-        )}
+        )} */}
         <Button lable="test">test</Button>
       </Grid>
     </div>
   );
 }
+
+export default Post;
