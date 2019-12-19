@@ -5,7 +5,6 @@ import api from "../util/API";
 const PostDataContext = React.createContext([{}, () => {}]);
 
 const PostDataProvider = (props) => {
-  
     const [data, setData] = useState();
     useEffect(() => {
       api

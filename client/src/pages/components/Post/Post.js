@@ -2,6 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Paper, Grid, Button } from "@material-ui/core";
 
+import usePostCall from '../../../hooks/usePostCall';
+
 const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(1.5),
@@ -9,12 +11,11 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary
   }
 }));
-const Post = (props) => {
-  console.log(props)
+const Post = () => {
   const classes = useStyles();
-
+  const data = usePostCall();
   return (
-    <div>
+    <>
       <Grid
         container
         spacing={3}
@@ -23,7 +24,7 @@ const Post = (props) => {
         justify="center"
         wrap="nowrap"
       >
-        {/* {data ? (
+        {data ? (
           data.map(i => {
             return (
               <Grid
@@ -46,10 +47,10 @@ const Post = (props) => {
               <Typography>Loading...?</Typography>
             </Paper>
           </Grid>
-        )} */}
+        )}
         <Button lable="test">test</Button>
       </Grid>
-    </div>
+    </>
   );
 }
 

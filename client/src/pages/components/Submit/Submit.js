@@ -24,7 +24,6 @@ export default function Submit() {
     api.submit(input)
     .then(data => data.status === 200 ? console.log(data) : console.log("Placeholder Expression!")      )
     .catch(err => console.log(err));
-    
   };
 
   return (
